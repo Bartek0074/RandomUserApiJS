@@ -11,6 +11,7 @@ html {
 body{
     font-size: 1.6rem;
     background-color: #2c2e31;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .wrapper {
@@ -21,10 +22,9 @@ body{
 
 .card{
     position: relative;
-    z-index: -1;
     margin: 2em auto;
     width: 90%;
-    max-width: 400px;
+    max-width: 800px;
     min-height: 250px;
     max-height: 600px;
     background-color: #fff;
@@ -36,7 +36,6 @@ body{
 .card::after{
     content: "";
     position: absolute;
-    z-index: -1;
     top: 0;
     left: 0;
     background-color: #e2e2e2;
@@ -45,8 +44,9 @@ body{
     border-bottom: .5px solid #5f5f5f;
 }
 
-.card .details .userImg{
+.card .details .user__img{
     position: relative;
+    z-index: 1;
     left: 50%;
     top: 20px;
     transform: translateX(-50%);
@@ -55,11 +55,11 @@ body{
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    margin-bottom: 30px;
+    margin-bottom: 3em;
     border: 1px solid rgba(0,0,0,.25);
 }
 
-.card .details .userImg img{
+.card .details .user__img img{
     position: absolute;
     left: 50%;
     top: 50%;
@@ -67,4 +67,37 @@ body{
     transform: translate(-50%,-50%);
     border-radius: 50%;
     border: 1px solid rgba(0,0,0,.25);
+}
+
+.card .details .user__title {
+    color: #6f6f6f;
+    z-index: 1;
+    text-align: center;
+    font-size: 2rem;
+    margin: 0.5em;
+}
+
+.card .details #user__value {
+    text-align: center;
+    font-size: 3.2rem;
+    margin: 0.5em 0.5em 1em;
+}
+
+.card .details .user__img .user__refresh {
+    position: absolute;
+    padding: 0.5em 1em;
+    border-radius: 2px;
+    color: white;
+    text-decoration: none;
+    background-color: #2a2a2abb;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px) scale(0);
+    opacity: 0;
+    transition: transform .3s ease-in, opacity .3s;
+}
+
+.card .details .user__img:hover .user__refresh{
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
 }
